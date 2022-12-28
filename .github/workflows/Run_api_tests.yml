@@ -23,11 +23,15 @@ jobs:
         - name: Setup .NET
           uses: actions/setup-dotnet@v3
           with:
-            dotnet-version: 6.0.x
-        - uses: LexisNexis-GHA-Public/action-download-artifact@v2.14.0
-          with:
-            workflow: CI.yml
-            name: testing-artifact-api
+            dotnet-version: 7.0.x
+        - name: download workflow artifact
+          env:
+            WORKFLOW_NAME: CI.yml
+            ARTIFACT_NAME: testing-artifact-api
+          shell: bash
+          run: |
+            TEST_RUN_ID=$(gh run list --workflow ${{ env.WORKFLOW_NAME }} --json databaseId --jq '.[0]' | jq '.databaseId')
+            gh run download ${{ env.TEST_RUN_ID }} -n ${{ env.ARTIFACT_NAME }} -D ./download
         - name: Run git init
           run: git init
         - name: Run tests
