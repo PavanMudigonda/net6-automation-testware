@@ -7,7 +7,7 @@ jobs:
   build:
     strategy:
       matrix:
-        os: ["windows-latest", "ubuntu-latest", "macOs-latest"]
+        os: ["windows-latest", "ubuntu-latest"]
       fail-fast: false
     runs-on: ${{ matrix.os }}
     steps:

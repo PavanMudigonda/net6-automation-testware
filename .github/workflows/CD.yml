@@ -12,7 +12,7 @@ jobs:
     uses: ./.github/workflows/Run_api_tests.yml
     with:
       environment: >-
-        ["windows-2022", "ubuntu-latest", "macOs-latest"]
+        ["windows-2022", "ubuntu-latest"]
       test_results_path: './results'
 
   web-tests:
