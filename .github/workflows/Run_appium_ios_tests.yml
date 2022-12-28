@@ -24,6 +24,7 @@ jobs:
           uses: actions/setup-dotnet@v3
           with:
             dotnet-version: 7.0.x
+<<<<<<< HEAD
         - name: download workflow artifact
           env:
             WORKFLOW_NAME: CI.yml
@@ -33,6 +34,12 @@ jobs:
             TEST_RUN_ID=$(gh run list --workflow ${{ env.WORKFLOW_NAME }} --json databaseId --jq '.[0]' | jq '.databaseId')
             gh run download ${{ env.TEST_RUN_ID }} -n ${{ env.ARTIFACT_NAME }}
 
+=======
+        - uses: LexisNexis-GHA-Public/action-download-artifact@v2.14.0
+          with:
+            workflow: CI.yml
+            name: testing-artifact-appium-mobile
+>>>>>>> 734a93dcbb5519310288088754d6f4a9740bd41c
         - name: Run git init
           run: git init
         - name: Install Appium Server
