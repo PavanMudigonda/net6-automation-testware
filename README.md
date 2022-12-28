@@ -217,3 +217,10 @@ Evidence collection:
     "TestResultPath": "C:\\workspace\\ERNI\\results\\"
 }
 ```
+
+
+### Locator Strategy:
+
+-  WinAppDriver
+
+https://www.automatetheplanet.com/most-complete-winappdriver-csharp-cheat-sheet/
