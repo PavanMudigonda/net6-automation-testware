@@ -27,7 +27,7 @@ jobs:
         - name: Setup .NET
           uses: actions/setup-dotnet@v3
           with:
-            dotnet-version: 6.0.x
+            dotnet-version: 7.0.x
         - uses: LexisNexis-GHA-Public/action-download-artifact@v2.14.0
           with:
             workflow: CI.yml
