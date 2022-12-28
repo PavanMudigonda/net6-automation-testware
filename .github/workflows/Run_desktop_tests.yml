@@ -28,7 +28,7 @@ jobs:
           env:
             WORKFLOW_NAME: CI.yml
             ARTIFACT_NAME: testing-artifact-winappdriver
-            GH_TOKEN: ${{ env.GITHUB_TOKEN }}
+            GH_TOKEN: ${{ github.token }}
           shell: bash
           run: |
             TEST_RUN_ID=$(gh run list --workflow ${{ env.WORKFLOW_NAME }} --json databaseId --jq '.[0]' | jq '.databaseId')
