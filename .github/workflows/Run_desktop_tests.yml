@@ -32,7 +32,6 @@ jobs:
           run: |
             TEST_RUN_ID=$(gh run list --workflow ${{ env.WORKFLOW_NAME }} --json databaseId --jq '.[0]' | jq '.databaseId')
             gh run download ${{ env.TEST_RUN_ID }} -n ${{ env.ARTIFACT_NAME }}
-
         - name: Run git init
           run: git init
         - name: Install Appium Server
