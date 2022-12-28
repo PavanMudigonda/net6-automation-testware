@@ -33,13 +33,13 @@ jobs:
           path: |
             ${{ github.workspace }}/samples/TestWare.Samples.Appium.Mobile/bin/Release/net6.0
       - name: Archive Testing artifacts - Selenium Web
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.1.1
         with:
           name: testing-artifact-selenium-web
           path: |
             ${{ github.workspace }}/samples/TestWare.Samples.Selenium.Web/bin/Release/net6.0
       - name: Archive Testing artifacts - WinAppDriver
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.1.1
         with:
           name: testing-artifact-winappdriver
           path: |
