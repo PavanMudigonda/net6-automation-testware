@@ -12,14 +12,14 @@ jobs:
     uses: ./.github/workflows/Run_api_tests.yml
     with:
       environment: >-
-        ["windows-2022", "ubuntu-latest"]
+        ["windows-latest", "ubuntu-latest"]
       test_results_path: './results'
 
   web-tests:
     uses: ./.github/workflows/Run_web_tests.yml
     with:
       environment: >-
-        ["windows-2022"]
+        ["windows-latest"]
       driver_type: >-
         ["Chrome", "Firefox", "Edge"]
       test_results_path: './results'
@@ -28,7 +28,7 @@ jobs:
     uses: ./.github/workflows/Run_desktop_tests.yml
     with:
       environment: >-
-        ["windows-2022", "windows-2019"]
+        ["windows-latest"]
       test_results_path: './results'
 
   android-tests:
